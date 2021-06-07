@@ -1,0 +1,21 @@
+﻿@model ASP.NETCoreDropDownList.Models.lmsAdminProfession
+@{
+    ViewData["Title"] = "Home Page";
+
+    <script src="/lib/jquery/dist/jquery.js"></script>
+
+    <form asp-controller="Demo" asp-action="Index" method="post" class="form-horizontal" role="form">
+        <div class="form-group">
+            <div class="row">
+                <div class="alert-danger" asp-validation-summary="ModelOnly"></div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                    <label asp-for="ID_PROFESSION" class="control-label">LISTA DE PROFESIONES</label>
+                    <select asp-for="NAME_PROFESSION"
+                            class="form-control"
+                            asp-items="@(new SelectList(@ViewBag.ListAdminProfessions,
+                                                        "ID_PROFESSION", "NAME_PROFESSION"))"></select>
+                </div>
+            </div>
+        </div>
+    </form>
+}
